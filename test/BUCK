@@ -1,0 +1,35 @@
+cxx_library(
+  name = 'build-c-api',
+  srcs = [
+    'BuildCAPI.c',
+  ],
+  deps = [
+    '//:libgraphqlparser',
+  ],
+)
+
+cxx_test(
+  name = 'json-visitor-tests',
+  srcs = [
+    'JsonVisitorTests.cpp',
+  ],
+  compiler_flags = [
+    '-std=gnu++11',
+  ],
+  deps = [
+    '//:libgraphqlparser',
+  ],
+)
+
+cxx_test(
+  name = 'parser-tests',
+  srcs = [
+    'ParserTests.cpp',
+  ],
+  compiler_flags = [
+    '-std=gnu++11',
+  ],
+  deps = [
+    '//:libgraphqlparser',
+  ],
+)
